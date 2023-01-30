@@ -11,4 +11,13 @@ class RoomModel extends Database
         ];
         return $this->select($query, $params);
     }
+
+    public function getRoomById($roomId)
+    {
+        $query = "SELECT * FROM room WHERE room_id = ?";
+        $params =[
+            "i" => $roomId
+        ];
+        return $this->select($query, $params);
+    }
 }

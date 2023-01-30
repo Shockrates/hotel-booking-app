@@ -1,14 +1,6 @@
 
 <?php
 
-// require_once __DIR__.'/app/boot/autoload.php';
-
-// use Hotel\Room;
-
-// $room1 = new Room();
-// $msg = $room1->showMessage();
-// $msg2 = $_SERVER['REQUEST_URI'];
-
 require __DIR__ . "/inc/bootstrap.php";
 
 $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
@@ -16,8 +8,6 @@ $uri = explode( '/', $uri );
 
 
 $dbTableNames = (new Database)->getAllTableNames();
-//print_r(array_values($dbTableNames));
-
 
 // if ((isset($uri[3]) && $uri[3] != 'user') || !isset($uri[4])) {
 //     header("HTTP/1.1 404 Not Found");
@@ -39,7 +29,6 @@ $strMethodName = $uri[4] . 'Action';
 $objFeedController->{$strMethodName}();
 
 
-
 ?>
 
 <!DOCTYPE html>
@@ -52,4 +41,5 @@ $objFeedController->{$strMethodName}();
 </head>
 <body>
     Index.php
+</body>
 </html>
